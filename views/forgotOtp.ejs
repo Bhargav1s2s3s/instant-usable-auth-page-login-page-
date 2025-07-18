@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OTP Request</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .otp-container {
+        background: #fff;
+        padding: 2rem 2.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 350px;
+      }
+      .otp-container h2 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      .otp-container form {
+        display: flex;
+        flex-direction: column;
+      }
+      .otp-container input[type="email"] {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .otp-container button {
+        padding: 0.75rem;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .otp-container button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="otp-container">
+      <h2>Request OTP</h2>
+      <p style="text-align: center; color: #555; margin-bottom: 1rem">
+        Enter your registered email address to receive a One-Time Password (OTP)
+        for secure login.
+      </p>
+      <form action="/api/otp-request" method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+        <input type="hidden" name="context" value="forgot" />
+
+        <button type="submit">Send OTP</button>
+      </form>
+    </div>
+  </body>
+</html>
