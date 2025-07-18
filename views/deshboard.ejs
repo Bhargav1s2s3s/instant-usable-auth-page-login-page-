@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 0;
+      }
+      .dashboard-container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        padding: 32px;
+        position: relative;
+      }
+      .logout-form-container {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+      }
+      .btn {
+        padding: 8px 18px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+      .btn-danger {
+        background: #d32f2f;
+        color: #fff;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 24px;
+      }
+      .stats {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+      .stat-card {
+        flex: 1;
+        background: #f0f2f5;
+        border-radius: 6px;
+        padding: 24px;
+        text-align: center;
+      }
+      .stat-card h2 {
+        margin: 0 0 8px 0;
+        font-size: 2em;
+        color: #1976d2;
+      }
+      .stat-card p {
+        margin: 0;
+        color: #555;
+      }
+      .recent-activity {
+        margin-top: 32px;
+      }
+      .recent-activity ul {
+        list-style: none;
+        padding: 0;
+      }
+      .recent-activity li {
+        background: #f9fafb;
+        margin-bottom: 10px;
+        padding: 12px 16px;
+        border-radius: 4px;
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <div class="logout-form-container">
+        <form action="/api/logout" method="GET" style="display: inline">
+          <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+      </div>
+      <h1>Welcome to Your Dashboard</h1>
+      <div class="stats">
+        <div class="stat-card">
+          <h2>120</h2>
+          <p>Users</p>
+        </div>
+        <div class="stat-card">
+          <h2>35</h2>
+          <p>Projects</p>
+        </div>
+        <div class="stat-card">
+          <h2>7</h2>
+          <p>Notifications</p>
+        </div>
+      </div>
+      <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <ul>
+          <li>Logged in successfully</li>
+          <li>Updated profile information</li>
+          <li>Created a new project: <strong>Website Redesign</strong></li>
+          <li>Received a new notification</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
